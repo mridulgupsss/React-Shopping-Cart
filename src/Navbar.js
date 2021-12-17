@@ -1,5 +1,6 @@
 import React from "react";
 
+// functional component
 const Navbar = (props) => {
   return (
     <div style={styles.nav}>

@@ -62,6 +62,14 @@ this.setState({
 })
 }
 
+getCount =  () =>{
+  const{products} = this.state;
+  let count=0;
+  products.forEach((product)=>{
+    count+=product.qty;
+  })
+  return count;
+}
 
 
   render(){
@@ -69,7 +77,10 @@ this.setState({
   return (
     <div className="App">
 
-      <Navbar/>
+      <Navbar
+      count={this.getCount()}
+      
+      />
 
       <Cart
     	products={products}  
