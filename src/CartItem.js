@@ -1,52 +1,10 @@
 import React from "react";
 
 class CartItem extends React.Component {
-
-    constructor(){
-        super();
-        this.state ={
-            price : 999, 
-            title : 'Phone',
-            qty : 1,
-            img : ''
-        }
-    }
-
-    increaseQuantity = () =>{
-
-        // setstate form 1
-        this.setState((prevState)=>{
-           return{
-            qty:prevState.qty+1
-           }
-        });
-
-        
-    }
-
-    decreaseQuantity = () =>{
-
-        const { qty } = this.state;
-        if(qty==0){
-            return;
-        }
-
-        // setstate form 2
-        this.setState({
-           
-            qty:this.state.qty-1
-           
-        });
-
-        
-    }
-
-
   render() {
-    const { price, title, qty } = this.state;
-    
+    const { price, title, qty } = this.props.product;
+    const { product } = this.props;
     return (
-
       <div className="cart-item">
         <div className="left-block">
           <img
@@ -56,7 +14,7 @@ class CartItem extends React.Component {
               borderRadius: 5,
               background: "#ccc",
             }}
-          
+            src={product.img}
           />
         </div>
         <div className="right-block">
@@ -69,20 +27,19 @@ class CartItem extends React.Component {
               alt="increase"
               className="action-icons"
               src="https://as2.ftcdn.net/jpg/01/07/62/07/500_F_107620769_UwNVSoXnKS4VNcOKoZjPohlEPn83oE38.jpg"
-              onClick={this.increaseQuantity}
-
+              onClick={() => this.props.onIncreaseQuantity(product)}
             />
             <img
               alt="decrease"
               className="action-icons"
               src="https://as1.ftcdn.net/jpg/03/73/49/86/500_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg"
-              onClick={this.decreaseQuantity}
+              onClick={() => this.props.onDecreaseQuantity(product)}
             />
             <img
               alt="delete"
               className="action-icons"
               src="https://as2.ftcdn.net/jpg/01/90/89/15/500_F_190891550_N7uKp2aHE3mOc20dmtDytj7atgvbhdOu.jpg"
-              
+              onClick={() => this.props.onDeleteProduct(product.id)}
             />
           </div>
         </div>
