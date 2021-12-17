@@ -10,24 +10,24 @@ class App extends React.Component {
     this.state = {
         products: [
             {
-                price : 999, 
+                price : 8000, 
                 title : 'Mobile Phone',
-                qty : 1,
+                qty : 0,
                 img : 'https://images.unsplash.com/photo-1585060544812-6b45742d762f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW9iaWxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
                 id: 1
                 
             },
             {
-                price : 99999, 
+                price : 54000, 
                 title : 'Laptop',
-                qty : 2,
+                qty : 0,
                 img : 'https://media.istockphoto.com/photos/laptop-computer-with-blue-pink-lighting-and-blank-screen-place-on-picture-id1292038829?b=1&k=20&m=1292038829&s=170667a&w=0&h=L8DhcSOFS3BZdCHN6ldjumqQBw0J2kk7mBagO5io5jM=',
                 id: 2
             },
             {
-                price : 99, 
+                price : 375, 
                 title : 'Watch',
-                qty : 5,
+                qty : 0,
                 img : 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8d2F0Y2h8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
                 id: 3
             }
@@ -98,7 +98,7 @@ getCartTotal = () =>{
       onDeleteProduct={this.DeleteProduct}
 
       />
-      <div>Total Price : {this.getCartTotal()} </div>
+      <div style={{padding: 10, fontSize:20}}>Total Price : {this.getCartTotal()} </div>
       )
       
     </div>
